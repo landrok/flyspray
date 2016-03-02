@@ -10,7 +10,14 @@ FlySprayI18N::setDefault($language);
 
 class FlySprayI18N {
     private static $translations = array();
+    public static $lang_code = "en";
 
+    public function setLangCode($lang="en") {
+	    self::$lang_code = $lang;
+    }
+    public function getLangCode() {
+	    return self::$lang_code;
+    }
     public static function init($lang, $translation) {
         self::$translations[$lang] = $translation;
     }
@@ -151,6 +158,7 @@ function load_translations(){
 	}
 
         FlySprayI18N::setDefault($language);
+        FlySprayI18N::setLangCode($lang_code);
     // correctly translate title since language not set when initialising the project
     if (!$proj->id) {
         $proj->prefs['project_title'] = L('allprojects');
