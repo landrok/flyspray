@@ -69,7 +69,7 @@ function ShowHidePassword(id) {
 				<div class="installBlock">
 				<div class="formBlock farRight" style="display:inline;">
 					<input type="hidden" name="action" value="complete" />
-					<input class="button" type="submit" name="next" value="Next >>" />
+					<input class="button" type="submit" name="next" value="<?php echo Filters::noXSS(L('next')); ?> >>" />
 				</div>
 				<p>
 				Proceed to complete <?php echo Filters::noXSS($product_name); ?> setup.

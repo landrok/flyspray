@@ -1,8 +1,8 @@
 			<div id="right">
 			<?php echo Filters::noXSS($message); ?>
 
-			<h1>Pre-installation check</h1>
-			<h2>PHP and supported libraries</h2>
+			<h1><?php echo Filters::noXSS(L('preinstallcheck')); ?></h1>
+			<h2><?php echo Filters::noXSS(L('libcheck')); ?></h2>
 			<div class="installBlock">
 				<table class="formBlock">
 				<tr>
