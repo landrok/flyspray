@@ -1098,8 +1098,8 @@ class Setup extends Flyspray
       {
       case 'yes':
          return ($boolean)
-         ?  '<span class="green">Yes</span>'
-         :  '<span class="red">No</span>';
+		 ?  '<span class="green">'.L('yes').'</span>'
+         :  '<span class="red">'.L('no').'</span>';
          break;
 
       case 'available':
