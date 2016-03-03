@@ -6,8 +6,8 @@
 			<div class="installBlock">
 				<table class="formBlock">
 				<tr>
-					<td class="heading">Library</td>
-					<td class="heading">Status</td>
+					<td class="heading"><?php echo Filters::noXSS(L('library')); ?></td>
+					<td class="heading"><?php echo Filters::noXSS(L('status')); ?></td>
 					<td class="heading">&nbsp;</td>
 				</tr>
 				<tr>
@@ -32,17 +32,14 @@
 				</tr>
 
 				<tr>
-					<td class="heading">Database</td>
+					<td class="heading"><?php echo Filters::noXSS(L('database')); ?></td>
 					<td class="heading">in PHP</td>
 					<td class="heading" style="text-align:center"><?php echo Filters::noXSS($product_name); ?></td>
 				</tr>
 				<?php echo $database_output; ?>
 
 				</table>
-				<p>
-				To make setup possible, you must have a correct PHP version installed and
-                <strong>at least one</strong> supported database.
-                </p>
+				<?php echo L('libchecktext'); ?>
                 <?php if (!$sapiStatus): ?>
                 <p><strong>CGI server API is not supported</strong>. Consider upgrading to FastCGI, otherwise you have to add
                 <code>force_baseurl = "http://yourflyspray/"</code> manually to flyspray.conf.php after setup.
@@ -51,7 +48,7 @@
 			</div>
 			<div class="clr"></div>
 
-			<h2>Recommended settings:</h2>
+			<h2><?php echo Filters::noXSS(L('recsettings')); ?></h2>
 			<div class="installBlock">
 				<table class="formBlock">
 				<tr>
@@ -62,18 +59,11 @@
 				<?php echo $php_settings; ?>
 
 				</table>
-				<p>
-				These settings are recommended for PHP in order to ensure full
-				compatibility with <?php echo Filters::noXSS($product_name); ?>.
-				</p>
-				<p>
-				However, <?php echo Filters::noXSS($product_name); ?> will still operate if your
-				settings do not quite match the recommended shown here.
-				</p>
+				<?php echo L('recsettingstext'); ?>
 			</div>
 			<div class="clr"></div>
 
-			<h2>Directory and File Permissions:</h2>
+			<h2><?php echo Filters::noXSS(L('dirandfileperms')); ?></h2>
 			<div class="installBlock">
 				<table class="formBlock">
 				<tr>
@@ -113,11 +103,11 @@
 			</div>
 			<div class="clr"></div>
 
-			<h2>Proceed to Database Setup:</h2>
+			<h2><?php echo Filters::noXSS(L('proceedtodbsetup')); ?></h2>
 			<div class="installBlock">
 				<form class="formBlock farRight" action="index.php" method="post" name="adminForm" style="display:inline;">
 				<input type="hidden" name="action" value="database" />
-				<input name="next" type="submit" class="button" value="Next >>" <?php echo Filters::noXSS(tpl_disableif(!$status)); ?> />
+				<input name="next" type="submit" class="button" value="<?php echo Filters::noXSS(L('next')); ?> >>" <?php echo Filters::noXSS(tpl_disableif(!$status)); ?> />
 				</form>
 				<?php if (!$status) { ?>
 				<p>
