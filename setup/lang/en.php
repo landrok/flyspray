@@ -26,9 +26,9 @@ $language=array(
 'recsettingstext'    => '<p>These settings are recommended for PHP in order to ensure full compatibility with Flyspray.</p>
 <p>However, Flyspray will still operate if your settings do not quite match the recommended shown here.</p>',
 'dirandfileperms'    => 'Directory and File Permissions',
-'dirandfilepermstext'=> '<p>In order for Flyspray to function correctly it needs to be able to access or write to certain files or directories. If you see "Unwriteable" you need to change the permissions on the file or directory to allow Flyspray to write to it.</p>',
+'dirandfilepermstext'=> 'In order for Flyspray to function correctly it needs to be able to access or write to certain files or directories. If you see "Unwriteable" you need to change the permissions on the file or directory to allow Flyspray to write to it.',
 'proceedtodbsetup'   => 'Proceed to Database Setup',
-'proceedtodbsetuptext'=>'<p>All configurations seems to be in place. You may proceed to the Database Setup page.</p>',
+'proceedtodbsetuptext'=>'All configurations seems to be in place. You may proceed to the Database Setup page.',
 'library'            => 'library',
 'status'             => 'status',
 'database'           => 'database',
