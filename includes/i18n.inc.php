@@ -12,10 +12,10 @@ class FlySprayI18N {
     private static $translations = array();
     public static $lang_code = "en";
 
-    public function setLangCode($lang="en") {
+    public static function setLangCode($lang="en") {
 	    self::$lang_code = $lang;
     }
-    public function getLangCode() {
+    public static function getLangCode() {
 	    return self::$lang_code;
     }
     public static function init($lang, $translation) {
@@ -105,7 +105,7 @@ function load_translations(){
 	# if no valid lang_code, return english
 	# valid == a-z and "_" case insensitive
 
-	if(array_key_exists('lang_code', $user->infos)){
+	if (isset($user) && array_key_exists('lang_code', $user->infos)){
 		$lang_code=$user->infos['lang_code'];
 	}
 
@@ -150,20 +150,21 @@ function load_translations(){
 		include_once($translation);
 		$language = is_array($translation) ? array_merge($language, $translation) : $language;
                 FlySprayI18N::init($lang_code, $language);
+		FlySprayI18N::setLangCode($lang_code);
 	}elseif( 'en'!=substr($lang_code, 0, strpos($lang_code, '_')) && is_readable(BASEDIR.'/lang/'.(substr($lang_code, 0, strpos($lang_code, '_'))).'.php') ){
 		# fallback 'de_AT' to 'de', but not for 'en_US'
 		$translation=BASEDIR.'/lang/'.(substr($lang_code, 0, strpos($lang_code, '_'))).'.php';
 		include_once($translation);
 		$language = is_array($translation) ? array_merge($language, $translation) : $language;    
+		FlySprayI18N::setLangCode(substr($lang_code, 0, strpos($lang_code, '_')));
 	}
 
-        FlySprayI18N::setDefault($language);
-        FlySprayI18N::setLangCode($lang_code);
-    // correctly translate title since language not set when initialising the project
-    if (!$proj->id) {
-        $proj->prefs['project_title'] = L('allprojects');
-        $proj->prefs['feed_description']  = L('feedforall');
-    }
+	FlySprayI18N::setDefault($language);
+	// correctly translate title since language not set when initialising the project
+	if (isset($proj) && !$proj->id) {
+		$proj->prefs['project_title'] = L('allprojects');
+		$proj->prefs['feed_description']  = L('feedforall');
+	}
 
     for ($i = 6; $i >= 1; $i--) {
         $fs->priorities[$i] = L('priority' . $i);
