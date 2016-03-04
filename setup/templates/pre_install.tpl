@@ -33,7 +33,7 @@
 
 				<tr>
 					<td class="heading"><?php echo Filters::noXSS(L('database')); ?></td>
-					<td class="heading">in PHP</td>
+					<td class="heading"><?php echo Filters::noXSS(L('inphp')); ?></td>
 					<td class="heading" style="text-align:center"><?php echo Filters::noXSS($product_name); ?></td>
 				</tr>
 				<?php echo $database_output; ?>
@@ -52,9 +52,9 @@
 			<div class="installBlock">
 				<table class="formBlock">
 				<tr>
-					<td class="heading">Directive</td>
-					<td class="heading">Recommended</td>
-					<td class="heading">Actual</td>
+					<td class="heading"><?php echo Filters::noXSS(L('directive')); ?></td>
+					<td class="heading"><?php echo Filters::noXSS(L('recommended')); ?></td>
+					<td class="heading"><?php echo Filters::noXSS(L('actual')); ?></td>
 				</tr>
 				<?php echo $php_settings; ?>
 
