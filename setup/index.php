@@ -519,7 +519,7 @@ class Setup extends Flyspray
    */
    public function GetIniSetting($option)
    {
-      return (ini_get($option) == '1' ? 'ON' : 'OFF');
+      return (ini_get($option) == '1' ? L('on') : L('off'));
    }
 
    /**
@@ -583,15 +583,15 @@ class Setup extends Flyspray
       // Array of the setting name, php ini name and the recommended value
       $test_settings =
       array(
-            array ('Safe Mode','safe_mode','OFF'),
-            array ('File Uploads','file_uploads','ON'),
-            array ('Magic Quotes GPC','magic_quotes_gpc','OFF'),
-            array ('Register Globals','register_globals','OFF'),
+            array (L('safe_mode'),'safe_mode', L('off')),
+            array (L('file_uploads'),'file_uploads', L('on')),
+            array (L('magic_quotes_gpc'),'magic_quotes_gpc', L('off')),
+            array (L('register_globals'),'register_globals', L('off')),
             //array ('Output Buffering','output_buffering','OFF'),
             );
 
       if (substr(php_sapi_name(), 0, 3) == 'cgi') {
-          $test_settings[] = array ('CGI fix pathinfo','cgi.fix_pathinfo','ON');
+          $test_settings[] = array (L('cgi_fix_pathinfo'),'cgi.fix_pathinfo', L('on'));
       }
 
       $output = '';
@@ -620,12 +620,12 @@ class Setup extends Flyspray
 
         if ($value == 1) {
 
-                $selection .= '<input type="radio" name="reminder_daemon" value="1" checked="checked" /> Enable';
-                $selection .= '<input type="radio" name="reminder_daemon" value="0" /> Disable';
+                $selection .= '<input type="radio" name="reminder_daemon" value="1" checked="checked" /> '.L('enable');
+                $selection .= '<input type="radio" name="reminder_daemon" value="0" /> '.L('disable');
         } else {
 
-                $selection .= '<input type="radio" name="reminder_daemon" value="1" /> Enable';
-                $selection .= '<input type="radio" name="reminder_daemon" value="0" checked="checked" /> Disable';
+                $selection .= '<input type="radio" name="reminder_daemon" value="1" /> '.L('enable');
+                $selection .= '<input type="radio" name="reminder_daemon" value="0" checked="checked" /> '.L('disable');
         }
             return $selection;
 
