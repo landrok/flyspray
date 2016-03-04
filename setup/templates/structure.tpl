@@ -12,7 +12,7 @@
   <div id="container">
     <div id="header">
       <div id="logo">
-        <h1><a href="<?php echo Filters::noXSS($index); ?>" title="Flyspray - The bug Killer!">The bug Killer!</a></h1>
+        <h1><a href="<?php echo Filters::noXSS($index); ?>" title="Flyspray - <?php echo Filters::noXSS(L('slogan')); ?>"><?php echo Filters::noXSS(L('slogan')); ?></a></h1>
       </div><!-- End of logo -->
     </div><!-- End of header -->
     <div id="content">
@@ -25,9 +25,9 @@
             <div <?php echo (isset($_POST['action']) && ($_POST['action'] == 'administration')) ? 'class="step-on"' : ''; ?>><?php echo Filters::noXSS(L('administration')); ?></div>
             <div <?php echo (isset($_POST['action']) && ($_POST['action'] == 'complete')) ? 'class="step-on"' : ''; ?>><?php echo Filters::noXSS(L('install')); ?><?php echo Filters::noXSS($product_name); ?></div>
             <h1><?php echo Filters::noXSS(L('documents')); ?></h1>
-            <div><a href="http://www.gnu.org/licenses/old-licenses/lgpl-2.1.html" title="LGPL License" target="_blank" title="LGPL License">LGPL License</a></div>
-            <div><a href="http://flyspray.org/manual" title="Installation guide" target="_blank" title="User Manual">Install Guide</a></div>
-            <div><a href="http://flyspray.org/manual" target="_blank" title="Developer's Manual">Developer's Manual</a> </div>
+            <div><a href="http://www.gnu.org/licenses/old-licenses/lgpl-2.1.html" title="<?php echo Filters::noXSS(L('lgpl_license')); ?>" target="_blank"><?php echo Filters::noXSS(L('lgpl_license')); ?></a></div>
+            <div><a href="http://flyspray.org/manual" title="<?php echo Filters::noXSS(L('installation_guide')); ?>" target="_blank"><?php echo Filters::noXSS(L('installation_guide')); ?></a></div>
+            <div><a href="http://flyspray.org/manual" target="_blank" title="<?php echo Filters::noXSS(L('developer_manual')); ?>"><?php echo Filters::noXSS(L('developer_manual')); ?></a> </div>
           </div><!-- End of stepbar -->		
             <?php echo $body; ?>
 
