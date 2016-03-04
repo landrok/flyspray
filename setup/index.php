@@ -1104,30 +1104,30 @@ class Setup extends Flyspray
 
       case 'available':
          return ($boolean)
-         ?  '<span class="green">Available</span>'
-         :  '<span class="red">Missing</span>';
+         ?  '<span class="green">'.L('available').'</span>'
+         :  '<span class="red">'.L('missing').'</span>';
          break;
 
       case 'writeable':
          return ($boolean)
-         ?  '<span class="green">Writeable</span>'
-         :  '<span class="red">Un-writeable</span>';
+         ?  '<span class="green">'.L('writeable').'</span>'
+         :  '<span class="red">'.L('un-writeable').'</span>';
          break;
 
       case 'on':
          return ($boolean)
-         ?  '<span class="green">ON</span>'
-         :  '<span class="red">OFF</span>';
+         ?  '<span class="green">'.L('on').'</span>'
+         :  '<span class="red">'.L('off').'</span>';
          break;
       case 'support':
          return ($boolean)
-         ?  '<span class="green">Supported</span>'
-         :  '<span class="red">X</span>';
+         ?  '<span class="green">'.L('supported').'</span>'
+         :  '<span class="red">'.L('x').'</span>';
          break;
       default:
          return ($boolean)
-         ?  '<span class="green">True</span>'
-         :  '<span class="red">False</span>';
+         ?  '<span class="green">'.L('true').'</span>'
+         :  '<span class="red">'.L('false').'</span>';
          break;
       }
    }
