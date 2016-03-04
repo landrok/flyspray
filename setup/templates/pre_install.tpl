@@ -82,14 +82,7 @@
 					<td>&nbsp;</td>
 				</tr>
 				</table>
-				<p>
-				In order for <?php echo Filters::noXSS($product_name); ?> to function
-				correctly it needs to be able to access or write to certain files
-				or directories. If you see "Unwriteable" you need to change the
-				permissions on the file or directory to allow <?php echo Filters::noXSS($product_name); ?>
-
-				to write to it.
-				</p>
+				<p><?php echo Filters::noXSS(L('dirandfilepermstext')); ?></p>
 				<?php if (!$config_status): ?>
 				<p>
 				The installer has detected that the <strong>flyspray.conf.php</strong> file is not
@@ -116,9 +109,7 @@
 				<?php echo Filters::noXSS($product_name); ?> setup.
 				</p>
 				<?php }else { ?>
-				<p>
-				All configurations seems to be in place. You may proceed to the Database Setup page.
-				</p>
+				<p><?php echo Filters::noXSS(L('proceedtodbsetuptext')); ?></p>
 				<?php } ?>
 			</div>
 			<div class="clr"></div>
