@@ -61,5 +61,18 @@ If you are not sure about these details, please consult with your administrator 
 'tableprefix'=>'table prefix',
 'tableprefixhint'=>'Optional table prefix to avoid collisions with existing tables. "flyspray_" or "fs_" are good choices.',
 'next'=>'Next',
+
+# new messages
+'available'      => 'Available',
+'missing'        => 'Missing',
+'writeable'      => 'Writeable',
+'un-writeable'   => 'Un-writeable',
+'on'             => 'ON',
+'off'            => 'OFF',
+'supported'      => 'Supported',
+'x'              => 'X',
+'true'           => 'True',
+'false'          => 'False',
+#'' => '',
 );
 ?>
