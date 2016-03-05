@@ -994,19 +994,12 @@ class Setup extends Flyspray
    public function PopulateDb($data)
    {
       // Check available upgrade scripts, use the script of very latest  version
-      $lang_code = FlySprayI18N::getLangCode();
       $folders = glob_compat(BASEDIR . '/upgrade/[0-9]*');
       usort($folders, 'version_compare'); // start with lowest version
       $folders = array_reverse($folders); // start with highest version
       $sql_file	= APPLICATION_PATH . '/setup/upgrade/' . reset($folders) . '/flyspray-install.xml';
-      if (is_readable(APPLICATION_PATH . '/setup/upgrade/' . reset($folders) . '/flyspray-install-'.$lang_code.'.xml')) {
-	      $sql_file = APPLICATION_PATH . '/setup/upgrade/' . reset($folders) . '/flyspray-install-'.$lang_code.'.xml';
-      }
 
       $upgradeInfo = APPLICATION_PATH . '/setup/upgrade/' . reset($folders) . '/upgrade.info';
-      if (is_readable(APPLICATION_PATH . '/setup/upgrade/' . reset($folders) . '/upgrade-'.$lang_code.'.info')) {
-             $upgradeInfo = APPLICATION_PATH . '/setup/upgrade/' . reset($folders) . '/upgrade-'.$lang_code.'.info';
-      }
       $upgradeInfo = parse_ini_file($upgradeInfo, true);
 
        // Check if the install/upgrade file exists
