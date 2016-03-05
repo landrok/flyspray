@@ -39,7 +39,7 @@
 				<?php echo $database_output; ?>
 
 				</table>
-				<?php echo L('libchecktext'); ?>
+				<p><?php echo L('libchecktext'); ?></p>
                 <?php if (!$sapiStatus): ?>
                 <p><strong>CGI server API is not supported</strong>. Consider upgrading to FastCGI, otherwise you have to add
                 <code>force_baseurl = "http://yourflyspray/"</code> manually to flyspray.conf.php after setup.

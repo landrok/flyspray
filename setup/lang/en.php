@@ -21,7 +21,7 @@ $language=array(
 'administration'     => 'Administration',
 'install'            => 'Install Flyspray',
 'libcheck'           => 'PHP and Supported Libraries',
-'libchecktext'       => '<p>To make setup possible, you must have a correct PHP version installed and <string>at least one</strong> supported database.</p>',
+'libchecktext'       => 'To make setup possible, you must have a correct PHP version installed and <strong>at least one</strong> supported database.',
 'recsettings'        => 'Recommended Settings',
 'recsettingstext'    => '<p>These settings are recommended for PHP in order to ensure full compatibility with Flyspray.</p>
 <p>However, Flyspray will still operate if your settings do not quite match the recommended shown here.</p>',
