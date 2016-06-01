@@ -1,4 +1,8 @@
 language: php
+
+# send builds to the container-based infrastructure
+sudo: false
+
 php:
 # composer needs at least php5.3.2, so php5.2 can't be tested here. Only with a full release with all additional packages yet installed..
 #  - 5.2
